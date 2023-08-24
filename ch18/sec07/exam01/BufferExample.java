@@ -1,4 +1,4 @@
-package ch18.sec07.exam01;
+/* package ch18.sec07.exam01;
 
 import java.io.*;
 
@@ -50,3 +50,6 @@ public class BufferExample {
         return (end-start);
     }
 }
+
+
+ */
