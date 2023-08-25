@@ -12,7 +12,7 @@ public class ObjectInputOutputStreamExample {
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
         //객체 생성
-        Member m1 = new Member("fail", "단풍이");
+        Member m1 = new Member("fall", "단풍이");
         Product p1 = new Product("노트북", 1500000);
         int[] arr1 = { 1, 2, 3 };
 
@@ -25,7 +25,7 @@ public class ObjectInputOutputStreamExample {
 
         //FileInputStream에 ObjectInputStream 보조 스트림 연결
         FileInputStream fis = new FileInputStream("C:/Temp/object.dat");
-        ObjectOutputStream ois = new ObjectOutputStream(fis);
+        ObjectOutputStream ois = new ObjectInputStream(fis);
 
         //파일을 읽고 역직렬화해서 객체로 복원
         Member m2 = (Member) ois.readObject();
