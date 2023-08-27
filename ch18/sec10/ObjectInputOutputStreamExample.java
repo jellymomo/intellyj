@@ -25,7 +25,7 @@ public class ObjectInputOutputStreamExample {
 
         //FileInputStream에 ObjectInputStream 보조 스트림 연결
         FileInputStream fis = new FileInputStream("C:/Temp/object.dat");
-        ObjectOutputStream ois = new ObjectInputStream(fis);
+        ObjectInputStream ois = new ObjectInputStream(fis);
 
         //파일을 읽고 역직렬화해서 객체로 복원
         Member m2 = (Member) ois.readObject();
