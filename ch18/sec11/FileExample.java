@@ -1,8 +1,10 @@
 package ch18.sec11;
 
+/*
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Data;
+import java.util.Date;
+import java.io.IOException;
 
 public class FileExample {
     public static void main(String[] args) {
@@ -21,15 +23,16 @@ public class FileExample {
         //Temp 폴더의 내용을 출력
         File temp = new File("C:/Temp");
         File[] contents = temp.listFiles();
-        SimpleDateFormat sdf = new SimpleDataFormat("yyyy-MM-dd a HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd a HH:mm");
         for(File file : contents) {
-            System.out.printf("%-25s", sdf.format(new Data(file.lastModified())));
+            System.out.printf("%-25s", sdf.format(new Date(file.lastModified())));
             if(file.isDirectory()) {
                 System.out.printf("%-10s%-20s", "<DIR>", file.getName());
             } else {
-                System.out.print("%-10s%-20s", file.length(), file.getName());
+                System.out.printf("%-10s%-20s", file.length(), file.getName());
             }
             System.out.println();
         }
     }
 }
+*/
