@@ -5,8 +5,10 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
+
 public class ServerExample {
     private static ServerSocket serverSocket = null;
+
     public static void main(String[] args) {
         System.out.println("----------------------------------------------------");
         System.out.println("서버를 종료하려면 q또는 Q를 입력하고 Enter 키를 입력하세요.");
@@ -27,6 +29,7 @@ public class ServerExample {
             //TCP 서버 종료
             stopServer();
         }
+
         public static void startServer() {
             //작업 스레드 정의
         Thread thread = new Thread() {
@@ -67,4 +70,3 @@ public class ServerExample {
             } catch (IOException e1) {}
         }
     }
-}
