@@ -21,9 +21,10 @@ public class ServerExample {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             String key = scanner.nextLine();
-            if(key.toLowerCase().equals("q")) {
+            if (key.toLowerCase().equals("q")) {
                 break;
             }
+        }
             scanner.close();
 
             //TCP 서버 종료
@@ -32,35 +33,35 @@ public class ServerExample {
 
         public static void startServer() {
             //작업 스레드 정의
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    //ServerSocket 생성 및 Port 바인딩
-                    serverSocket = new ServerSocket(50001);
-                    System.out.println("[서버] 시작됨");
+            Thread thread = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        //ServerSocket 생성 및 Port 바인딩
+                        serverSocket = new ServerSocket(50001);
+                        System.out.println("[서버] 시작됨");
 
-                    while (true) {
-                        System.out.println("\n[서버] 연결 요청을 기다림\n");
-                        //연결 수락
-                        Socket socket = serverSocket.accept();
+                        while (true) {
+                            System.out.println("\n[서버] 연결 요청을 기다림\n");
+                            //연결 수락
+                            Socket socket = serverSocket.accept();
 
-                        //연결된 클라이언트 정보 얻기
-                        InetSocketAddress isa =
-                                (InetSocketAddress) socket.getRemoteSocketAddress();
-                        System.out.println("[서버] " + isa.getHostName() + "의 연결 요청을 수락함");
+                            //연결된 클라이언트 정보 얻기
+                            InetSocketAddress isa =
+                                    (InetSocketAddress) socket.getRemoteSocketAddress();
+                            System.out.println("[서버] " + isa.getHostName() + "의 연결 요청을 수락함");
 
-                        //연결 끊가
-                        socket.close();
-                        System.out.println("[서버] " + isa.getHostName() + "의 연결을 끊음");
+                            //연결 끊가
+                            socket.close();
+                            System.out.println("[서버] " + isa.getHostName() + "의 연결을 끊음");
+                        }
+                    } catch (IOException e) {
+                        System.out.println("[서버] " + e.getMessage());
                     }
-                } catch (IOException e) {
-                    System.out.println("[서버] " + e.getMessage());
                 }
-            }
-        };
-        //스레드 시작
-        thread.start();
+            };
+            //스레드 시작
+            thread.start();
         }
         public static void stopServer() {
             try {
