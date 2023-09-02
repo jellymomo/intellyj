@@ -10,12 +10,12 @@ public class FilesExample2 {
     public static void main(String[] args) {
         try {
             String data = "" +
-                    "id: winter\n +"
+                    "id: winter\n" +
                     "email: winter@mycompany.com\n" +
                             "tel: 010-123-1234";
 
             //Path 객체 생성
-            Path path = Path.get("C:/Temp/user:txt");
+            Path path = Paths.get("C:/Temp/user:txt");
 
             //파일 생성 및 데이터 저장
             Files.writeString(Paths.get("C:/Temp/user.txt"), data,
