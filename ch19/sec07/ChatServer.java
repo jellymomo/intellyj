@@ -75,4 +75,34 @@ public void sendToAll(SocketClient sender, String message) {
         }
 
         //메소드 서버 종료
-public
+public void stop() {
+    try {
+        serverScoket.close();
+        threadPool.shutdownNow();
+        chatRoom.values().stream().forEach(sc -> sc.close());
+        System.out.println("[서버] 종료됨");
+        } catch (IOException e1) {}
+        }
+
+        //메소드: 메인
+public static void main(String[]args){
+        try {
+            ChatServer chatServer = new ChatServer();
+            chatServer.start();
+
+        System.out.println("-----------------------------------------------");
+        System.out.println("서버를 종료하려면 q를 입력하고 Enter");
+        System.out.println("-----------------------------------------------");
+
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            String key = scanner.nextLine();
+            if(key.equals("q"))   break;
+        }
+        scanner.close();
+        chatServer.stop();
+        } catch(IOException e) {
+        System.out.println("[서버] " + e.getMessage());
+        }
+        }
+        }
