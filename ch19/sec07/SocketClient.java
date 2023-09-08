@@ -1,5 +1,6 @@
 package ch19.sec07;
 
+/*
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -22,3 +23,6 @@ public class SocketClient {
 public SocketClient(ChatServer chatServer, Socket socket) {
     try
 }
+
+
+ */
